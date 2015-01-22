@@ -89,15 +89,16 @@ http://ip:8080/fdap/workbench.action
 
 ### 2.内嵌部署模式
 
-1. 执行deploy-integration.sh
+>1.执行deploy-integration.sh
 
     cd ~/fdap
     chmod 755 deploy-integration.sh
     ./deploy-integration.sh
 
-2. 进入~/targetsys目录，手动配置相关文件
 
- * web.xml，将下面内容copy到被集成系统的web.xml中去，如有重复内容请检查后去重
+>2. 进入~/targetsys目录，手动配置相关文件
+
+>> * web.xml，将下面内容copy到被集成系统的web.xml中去，如有重复内容请检查后去重
 
     	<filter>
     		<filter-name>encodingFilter</filter-name>
@@ -193,7 +194,7 @@ http://ip:8080/fdap/workbench.action
             <url-pattern>/servlet/FileUpload</url-pattern>
         </servlet-mapping>
 
- * fdap-config.xml，将文件中的内容替换为以下内容：（jsp页面路径改为fdap目录下）
+>>* fdap-config.xml，将文件中的内容替换为以下内容：（jsp页面路径改为fdap目录下）
 
     <?xml version="1.0" encoding="UTF-8"?>
     <fdap>
@@ -215,7 +216,7 @@ http://ip:8080/fdap/workbench.action
         </action>
     </fdap>
 
- * config/config.xml，内容改为如下,将ip,port改为目标系统的ip,port，将targetsys改为目标系统的apppath
+>> * config/config.xml，内容改为如下,将ip,port改为目标系统的ip,port，将targetsys改为目标系统的apppath
 
     <config>
         <endpoint>http://ip:port/targetsys/fdap/messagebroker/amf</endpoint>
@@ -223,13 +224,12 @@ http://ip:8080/fdap/workbench.action
         <upload>http://ip:port/targetsys/fdap/servlet/FileUpload</upload>
     </config>
 
- * config.properties与fdap.properties的配置见上面第9条
+>> * config.properties与fdap.properties的配置见上面第9条
 
-3. 其它集成问题请联系统fdap项目小组,小组成员如下：
+>3. 其它集成问题请联系统fdap项目小组,小组成员如下：
 
     [章辉](hui.z@sunyard.com)
     [王海江](haij.wang@sunyard.com)
     [孔文文](wenw.kong@sunyard.com)
     [刘朦](meng.l@sunyard.com)
-    [沈永生](yongsheng.s@sunyard.com)
-
+    [沈永生](yongsheng.s@sunyard.com)  
