@@ -112,10 +112,6 @@ http://ip:8080/fdap/workbench.action
                 <param-value>true</param-value>
             </init-param>
         </filter>
-
-
-
-
         <filter-mapping>
             <filter-name>encodingFilter</filter-name>
             <url-pattern>/*</url-pattern>
@@ -142,8 +138,6 @@ http://ip:8080/fdap/workbench.action
         <session-config>
             <session-timeout>30</session-timeout>
         </session-config>
-
-
         <!-- spring -->
         <context-param>
             <param-name>contextConfigLocation</param-name>
@@ -152,17 +146,10 @@ http://ip:8080/fdap/workbench.action
         <listener>
             <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
         </listener>
-
-
-
-
         <!-- Http Flex Session attribute and binding listener support -->
         <listener>
             <listener-class>flex.messaging.HttpFlexSession</listener-class>
         </listener>
-
-
-
         <!-- MessageBroker Servlet -->
         <servlet>
             <servlet-name>MessageBrokerServlet</servlet-name>
@@ -177,8 +164,6 @@ http://ip:8080/fdap/workbench.action
             </init-param>
             <load-on-startup>1</load-on-startup>
         </servlet>
-
-
         <servlet-mapping>
             <servlet-name>MessageBrokerServlet</servlet-name>
             <url-pattern>/messagebroker/*</url-pattern>
@@ -194,12 +179,11 @@ http://ip:8080/fdap/workbench.action
             <url-pattern>/servlet/FileUpload</url-pattern>
         </servlet-mapping>
 
-
   * fdap-config.xml，将文件中的内容替换为以下内容：（jsp页面路径改为fdap目录下）
 
         <?xml version="1.0" encoding="UTF-8"?>
-        <fdap>
-        <action path="help/search" class="com.sunyard.fdap.action.help.HelpAction">
+            <fdap>
+            <action path="help/search" class="com.sunyard.fdap.action.help.HelpAction">
             <result name="success" page="helplist.jsp"></result>
             <result name="error" page="fdap/error.jsp"></result>
         </action>
@@ -207,7 +191,7 @@ http://ip:8080/fdap/workbench.action
             <result name="success" page="fdap/workbench.jsp"></result>
         </action>
         <action path="view" class="com.sunyard.fdap.action.WorkbenchAction">
-            <result name="success" page="fdap/workbech.jsp"></result>
+        <result name="success" page="fdap/workbech.jsp"></result>
         </action>
         <action path="/design" class="com.sunyard.fdap.action.WorkbenchAction">
             <result name="success" page="fdap/workbech.jsp"></result>
@@ -228,8 +212,8 @@ http://ip:8080/fdap/workbench.action
  * config.properties与fdap.properties的配置见上面第9条
 
 3. 其它集成问题请联系统fdap项目小组,小组成员如下：
-    [章辉](hui.z@sunyard.com)
-    [王海江](haij.wang@sunyard.com)
-    [孔文文](wenw.kong@sunyard.com)
-    [刘朦](meng.l@sunyard.com)
-    [沈永生](yongsheng.s@sunyard.com)
+    - [章辉] hui.z@sunyard.com
+    - [王海江]haij.wang@sunyard.com
+    - [孔文文]wenw.kong@sunyard.com
+    - [刘朦]meng.l@sunyard.com)
+    - [沈永生]yongsheng.s@sunyard.com
