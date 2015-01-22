@@ -183,7 +183,6 @@ http://ip:8080/fdap/workbench.action
 
   * fdap-config.xml，将文件中的内容替换为以下内容：（jsp页面路径改为fdap目录下）
 
-        <?xml version="1.0" encoding="UTF-8"?>
         <fdap>
             <action path="help/search" class="com.sunyard.fdap.action.help.HelpAction">
                 <result name="success" page="helplist.jsp"></result>
