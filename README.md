@@ -99,7 +99,8 @@ http://ip:8080/fdap/workbench.action
 2. 进入~/targetsys目录，手动配置相关文件
 
  * web.xml，将下面内容copy到被集成系统的web.xml中去，如有重复内容请检查后去重
-<pre><code>
+
+
         <filter>
         <filter-name>encodingFilter</filter-name>
             <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
@@ -178,37 +179,37 @@ http://ip:8080/fdap/workbench.action
             <servlet-name>FileUpload</servlet-name>
             <url-pattern>/servlet/FileUpload</url-pattern>
         </servlet-mapping>
-</code></pre>
+
+
   * fdap-config.xml，将文件中的内容替换为以下内容：（jsp页面路径改为fdap目录下）
-<pre><code>
+
         <?xml version="1.0" encoding="UTF-8"?>
-            <fdap>
+        <fdap>
             <action path="help/search" class="com.sunyard.fdap.action.help.HelpAction">
-            <result name="success" page="helplist.jsp"></result>
-            <result name="error" page="fdap/error.jsp"></result>
-        </action>
-        <action path="workbench" class="com.sunyard.fdap.action.WorkbenchAction">
-            <result name="success" page="fdap/workbench.jsp"></result>
-        </action>
-        <action path="view" class="com.sunyard.fdap.action.WorkbenchAction">
-        <result name="success" page="fdap/workbech.jsp"></result>
-        </action>
-        <action path="/design" class="com.sunyard.fdap.action.WorkbenchAction">
-            <result name="success" page="fdap/workbech.jsp"></result>
-        </action>
-        <action path="inittable" class="com.sunyard.fdap.action.InitTableAction">
-            <result name="success" page="fdap/inittable-success.jsp"></result>
-        </action>
+                <result name="success" page="helplist.jsp"></result>
+                <result name="error" page="fdap/error.jsp"></result>
+            </action>
+            <action path="workbench" class="com.sunyard.fdap.action.WorkbenchAction">
+                <result name="success" page="fdap/workbench.jsp"></result>
+            </action>
+            <action path="view" class="com.sunyard.fdap.action.WorkbenchAction">
+                <result name="success" page="fdap/workbech.jsp"></result>
+            </action>
+            <action path="/design" class="com.sunyard.fdap.action.WorkbenchAction">
+                <result name="success" page="fdap/workbech.jsp"></result>
+            </action>
+            <action path="inittable" class="com.sunyard.fdap.action.InitTableAction">
+                <result name="success" page="fdap/inittable-success.jsp"></result>
+            </action>
         </fdap>
-</code></pre>
+
   * config/config.xml，内容改为如下,将ip,port改为目标系统的ip,port，将targetsys改为目标系统的apppath
-<pre><code>
+
             <config>
-            <endpoint>http://ip:port/targetsys/fdap/messagebroker/amf</endpoint>
-            <streamingamf>http://ip:port/targetsys/fdap/messagebroker/streamingamf</streamingamf>
-            <upload>http://ip:port/targetsys/fdap/servlet/FileUpload</upload>
+                <endpoint>http://ip:port/targetsys/fdap/messagebroker/amf</endpoint>
+                <streamingamf>http://ip:port/targetsys/fdap/messagebroker/streamingamf</streamingamf>
+                <upload>http://ip:port/targetsys/fdap/servlet/FileUpload</upload>
             </config>
-</code></pre>
  * config.properties与fdap.properties的配置见上面第9条
 
 3. 其它集成问题请联系统fdap项目小组,小组成员如下：
