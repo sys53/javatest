@@ -98,7 +98,7 @@ http://ip:8080/fdap/workbench.action
 
 2. 进入~/targetsys目录，手动配置相关文件
 
- *web.xml，将下面内容copy到被集成系统的web.xml中去，如有重复内容请检查后去重
+ * web.xml，将下面内容copy到被集成系统的web.xml中去，如有重复内容请检查后去重
 
         <filter>
     		<filter-name>encodingFilter</filter-name>
@@ -195,7 +195,7 @@ http://ip:8080/fdap/workbench.action
         </servlet-mapping>
 
 
- *fdap-config.xml，将文件中的内容替换为以下内容：（jsp页面路径改为fdap目录下）
+ * fdap-config.xml，将文件中的内容替换为以下内容：（jsp页面路径改为fdap目录下）
 
         <?xml version="1.0" encoding="UTF-8"?>
         <fdap>
@@ -217,7 +217,7 @@ http://ip:8080/fdap/workbench.action
         </action>
         </fdap>
 
-  *config/config.xml，内容改为如下,将ip,port改为目标系统的ip,port，将targetsys改为目标系统的apppath
+  * config/config.xml，内容改为如下,将ip,port改为目标系统的ip,port，将targetsys改为目标系统的apppath
 
         <config>
             <endpoint>http://ip:port/targetsys/fdap/messagebroker/amf</endpoint>
