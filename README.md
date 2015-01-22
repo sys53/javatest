@@ -101,88 +101,88 @@ http://ip:8080/fdap/workbench.action
  * web.xml，将下面内容copy到被集成系统的web.xml中去，如有重复内容请检查后去重
 
         <filter>
-    		<filter-name>encodingFilter</filter-name>
-    		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
-    		<init-param>
-    			<param-name>encoding</param-name>
-    			<param-value>UTF-8</param-value>
-    		</init-param>
-    		<init-param>
-    			<param-name>forceEncoding</param-name>
-    			<param-value>true</param-value>
-    		</init-param>
-    	</filter>
+        <filter-name>encodingFilter</filter-name>
+            <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+            <init-param>
+                <param-name>encoding</param-name>
+                <param-value>UTF-8</param-value>
+            </init-param>
+            <init-param>
+                <param-name>forceEncoding</param-name>
+                <param-value>true</param-value>
+            </init-param>
+        </filter>
 
 
 
 
-    	<filter-mapping>
-    		<filter-name>encodingFilter</filter-name>
-    		<url-pattern>/*</url-pattern>
-    	</filter-mapping>
+        <filter-mapping>
+            <filter-name>encodingFilter</filter-name>
+            <url-pattern>/*</url-pattern>
+        </filter-mapping>
 
-    	<filter>
-    		<filter-name>springSecurityFilterChain</filter-name>
-    		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
-    	</filter>
+        <filter>
+            <filter-name>springSecurityFilterChain</filter-name>
+            <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+        </filter>
 
-    	<filter-mapping>
-    		<filter-name>springSecurityFilterChain</filter-name>
-    		<url-pattern>/*</url-pattern>
-    	</filter-mapping>
+        <filter-mapping>
+            <filter-name>springSecurityFilterChain</filter-name>
+            <url-pattern>/*</url-pattern>
+        </filter-mapping>
 
-    	<servlet>
-    		<servlet-name>fdapServlet</servlet-name>
-    		<servlet-class>com.sunyard.fdap.core.servlet.FdapServlet</servlet-class>
-    	</servlet>
-    	<servlet-mapping>
-    		<servlet-name>fdapServlet</servlet-name>
-    		<url-pattern>*.action</url-pattern>
-    	</servlet-mapping>
-    	<session-config>
-    		<session-timeout>30</session-timeout>
-    	</session-config>
+        <servlet>
+            <servlet-name>fdapServlet</servlet-name>
+            <servlet-class>com.sunyard.fdap.core.servlet.FdapServlet</servlet-class>
+        </servlet>
+        <servlet-mapping>
+            <servlet-name>fdapServlet</servlet-name>
+            <url-pattern>*.action</url-pattern>
+        </servlet-mapping>
+        <session-config>
+            <session-timeout>30</session-timeout>
+        </session-config>
 
 
         <!-- spring -->
-    	<context-param>
-    		<param-name>contextConfigLocation</param-name>
+        <context-param>
+            <param-name>contextConfigLocation</param-name>
             <param-value>classpath:spring/fdap-*.xml</param-value>
         </context-param>
-    	<listener>
-    		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-    	</listener>
+        <listener>
+            <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+        </listener>
 
 
 
 
-    	<!-- Http Flex Session attribute and binding listener support -->
-    	<listener>
-    		<listener-class>flex.messaging.HttpFlexSession</listener-class>
-    	</listener>
+        <!-- Http Flex Session attribute and binding listener support -->
+        <listener>
+            <listener-class>flex.messaging.HttpFlexSession</listener-class>
+        </listener>
 
 
 
-    	<!-- MessageBroker Servlet -->
-    	<servlet>
-    		<servlet-name>MessageBrokerServlet</servlet-name>
-    		<servlet-class>flex.messaging.MessageBrokerServlet</servlet-class>
-    		<init-param>
-    			<param-name>services.configuration.file</param-name>
-    			<param-value>/WEB-INF/flex/services-config.xml</param-value>
-    		</init-param>
+        <!-- MessageBroker Servlet -->
+        <servlet>
+            <servlet-name>MessageBrokerServlet</servlet-name>
+            <servlet-class>flex.messaging.MessageBrokerServlet</servlet-class>
+            <init-param>
+                <param-name>services.configuration.file</param-name>
+                <param-value>/WEB-INF/flex/services-config.xml</param-value>
+            </init-param>
             <init-param>
                 <param-name>messageBrokerId</param-name>
                 <param-value>messageBrokerId</param-value>
             </init-param>
-    		<load-on-startup>1</load-on-startup>
-    	</servlet>
+            <load-on-startup>1</load-on-startup>
+        </servlet>
 
 
-    	<servlet-mapping>
-    		<servlet-name>MessageBrokerServlet</servlet-name>
-    		<url-pattern>/messagebroker/*</url-pattern>
-    	</servlet-mapping>
+        <servlet-mapping>
+            <servlet-name>MessageBrokerServlet</servlet-name>
+            <url-pattern>/messagebroker/*</url-pattern>
+        </servlet-mapping>
 
         <!--文件上传-->
         <servlet>
