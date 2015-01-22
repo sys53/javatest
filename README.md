@@ -219,13 +219,13 @@ http://ip:8080/fdap/workbench.action
 
   * config/config.xml，内容改为如下,将ip,port改为目标系统的ip,port，将targetsys改为目标系统的apppath
 
-        <config>
+            <config>
             <endpoint>http://ip:port/targetsys/fdap/messagebroker/amf</endpoint>
             <streamingamf>http://ip:port/targetsys/fdap/messagebroker/streamingamf</streamingamf>
             <upload>http://ip:port/targetsys/fdap/servlet/FileUpload</upload>
             </config>
 
- *config.properties与fdap.properties的配置见上面第9条
+ * config.properties与fdap.properties的配置见上面第9条
 
 3. 其它集成问题请联系统fdap项目小组,小组成员如下：
     [章辉](hui.z@sunyard.com)
