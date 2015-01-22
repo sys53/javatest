@@ -195,7 +195,7 @@ http://ip:8080/fdap/workbench.action
         </servlet-mapping>
 
 
- * fdap-config.xml，将文件中的内容替换为以下内容：（jsp页面路径改为fdap目录下）
+  * fdap-config.xml，将文件中的内容替换为以下内容：（jsp页面路径改为fdap目录下）
 
         <?xml version="1.0" encoding="UTF-8"?>
         <fdap>
